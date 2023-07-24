@@ -13,9 +13,15 @@
           <v-col cols="5">
             <v-card class="mx-auto" min-height="60vh">
               <v-list>
-                <v-list-subheader>CLIENTS</v-list-subheader>
+                <v-text-field
+                  label="Filter Clients..."
+                  class="pa-4 m-0"
+                  variant="underlined"
+                  v-model="filterText"
+                  clearable
+                ></v-text-field>
                 <v-list-item
-                  v-for="client in data.clients.default"
+                  v-for="client in filteredClients"
                   :key="client.name"
                   color="primary"
                   variant="plain"
@@ -74,7 +80,20 @@
 </style>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
 const { data } = await useFetch("/api/clients");
 const selectedClient = ref("");
+const filterText = ref("");
+
+const filteredClients = computed(() => {
+  let filter = filterText.value;
+  if (data && data.value && filter) {
+    return data.value.clients.default.filter((item) =>
+      Object.values(item).some((v) => v?.toLowerCase().includes(filter))
+    );
+  } else {
+    return data.value.clients.default;
+  }
+});
 </script>
