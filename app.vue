@@ -1,5 +1,4 @@
 <template>
-  <pre>{{ $data }}</pre>
   <v-app>
     <v-app-bar>
       <v-app-bar-title
@@ -14,18 +13,18 @@
             <v-card class="mx-auto" min-height="60vh">
               <v-list>
                 <v-text-field
-                  label="Filter Clients..."
-                  class="pa-4 m-0"
-                  variant="underlined"
                   v-model="filterText"
+                  variant="underlined"
+                  label="Filter Clients..."
                   clearable
+                  class="pa-4 m-0"
                 ></v-text-field>
                 <v-list-item
                   v-for="client in filteredClients"
                   :key="client.name"
                   color="primary"
                   variant="plain"
-                  :prependAvatar="client.avatar"
+                  :prepend-avatar="client.avatar"
                   :active="client === selectedClient"
                   @click="selectedClient = client"
                 >
@@ -72,13 +71,6 @@
   </v-app>
 </template>
 
-<style>
-.avatar {
-  width: 128px;
-  height: 128px;
-}
-</style>
-
 <script setup>
 import { ref, computed } from "vue";
 
@@ -87,7 +79,7 @@ const selectedClient = ref("");
 const filterText = ref("");
 
 const filteredClients = computed(() => {
-  let filter = filterText.value;
+  const filter = filterText.value;
   if (data && data.value && filter) {
     return data.value.clients.default.filter((item) =>
       Object.values(item).some((v) => v?.toLowerCase().includes(filter))
@@ -97,3 +89,10 @@ const filteredClients = computed(() => {
   }
 });
 </script>
+
+<style>
+.avatar {
+  width: 128px;
+  height: 128px;
+}
+</style>
