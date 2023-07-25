@@ -52,7 +52,7 @@
                   >Avatar: <v-img class="avatar" :src="selectedClient.avatar"
                 /></v-card-text>
                 <v-card-text
-                  v-html="`Quote: ${selectedClient.quote}`"
+                  v-html="`Quote: ${selectedClient.quote || 'N/A'}`"
                 ></v-card-text>
                 <v-card-text
                   v-html="`Nationality: ${selectedClient.nationality}`"

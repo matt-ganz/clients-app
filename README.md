@@ -1,12 +1,10 @@
 # Notes
 
-I've been a front end engineer for just over 20 years but I have worked on 2 Vue projects in my career, the last one just over a year ago (which was Nuxt).
+I have worked on only 1 Vue project in my career, a personal site that was simply static (2 years ago) that I upgraded to a Nuxt app last year. This coding exercise was an excellent opportunity for me to dive in to your tech stack. That said, the finished product was quite basic as you will see.
 
-My goal was to use Vuetify and Nuxt3, which proved to be a bit difficult during the integration portion. I certainly burned several hours doing this and you can see that my app is very basic. But I believe that I covered all the tasks.
+My overall goal was to use Vuetify and Nuxt3 together (along with Vitest), which proved to be a bit difficult. I certainly burned time doing this, but I believe that I covered all the tasks.
 
-My day-to-day framework is Angular and I've used it for about 3 years now. But I wanted to use Vue and Nuxt because I know that is your dev stack, and it's fun to learn new stuff.
-
-Personally, I'd certainly want someone more well-versed in these technologies than myself, but I do appreciate the time you took. I certainly enjoyed learning about the composition api.
+My day-to-day framework is Angular and I've used it for about 3 years now. Overall, I've been a frontend engineer for over 20 years, spanning many technologies (as well as OO JavaScript).
 
 # Nuxt 3 Minimal Starter
 
