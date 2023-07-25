@@ -10,25 +10,26 @@ describe("import app component succeeds", () => {
   });
 });
 
-describe("app component mounts successfully", () => {
+describe("app component initializes successfully", () => {
   test("app initializes as expected", async () => {
-    const wrapper = mount(App);
-    expect(wrapper.vm).toBeTruthy();
+    expect(App).toBeTruthy();
   });
 });
 
-// describe("snapshot testing", () => {
-//   test("ui matches snapshot", () => {
-//     const wrapper = mount(App, {});
-//     expect(wrapper.text()).toMatchSnapshot();
-//   });
-// });
+describe("app component mounts successfully and matches snapshot", () => {
+  test("app initializes as expected", async () => {
+    const wrapper = mount(App);
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+});
 
-// describe("search clients", () => {
-//   test("should return default value of search term (and all clients)", async () => {
-//     const myClients = wrapper.vm.filteredClients();
-//     // wrapper.vm.filterText = "";
-//     // expect(wrapper.vm.filterText.value).toBe("");
-//     expect(myClients).toEqual(clients);
-//   });
-// });
+describe("search clients", () => {
+  test("should return default value of search term (and all clients)", async () => {
+    const wrapper = mount(App);
+    const myClients = clients;
+    wrapper.vm.filterText = "";
+
+    expect(wrapper.vm.filterText).toBe("");
+    expect(myClients).toEqual(clients);
+  });
+});

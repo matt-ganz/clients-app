@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`app component initializes successfully > app initializes as expected 1`] = `""`;
+
+exports[`app component mounts successfully and matches snapshot > app initializes as expected 1`] = `""`;
